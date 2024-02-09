@@ -4,13 +4,13 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Jan AI Docs',
   tagline: 'Everything you need about Jan AI is here',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/jan-50.png',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -77,11 +77,11 @@ const config = {
             position: 'left',
             label: 'Guides',
           },
-          {to: '/developer', label: 'Developer', position: 'left'},
-          {to: '/api-reference', label: 'API Reference', position: 'left'},
-          {to: '/framework', label: 'Framework', position: 'left'},
-          {to: '/blog', label: 'Blog', position: 'right'},
-          {to: '/about', label: 'About', position: 'right'},
+          { to: '/developer', label: 'Developer', position: 'left' },
+          { to: '/api-reference', label: 'API Reference', position: 'left' },
+          { to: '/framework', label: 'Framework', position: 'left' },
+          { to: '/blog', label: 'Blog', position: 'right' },
+          { to: '/about', label: 'About', position: 'right' },
         ],
       },
       footer: {
@@ -134,7 +134,7 @@ const config = {
               },
               {
                 label: 'Changelog',
-                to: '/',
+                to: '/docs/category/changelog',
               },
             ],
           },
@@ -143,15 +143,15 @@ const config = {
             items: [
               {
                 label: 'Github',
-                href: 'https://github.com',
+                href: 'https://github.com/janhq/jan',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.gg/FTk2MvZwJH',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/janframework',
               },
             ],
           },
@@ -168,7 +168,7 @@ const config = {
               },
               {
                 label: 'Careers',
-                to: '/#',
+                to: 'https://janai.bamboohr.com/careers',
               },
             ],
           },
