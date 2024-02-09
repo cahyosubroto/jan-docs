@@ -28,3 +28,56 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+html {
+  background-color: #F1F5F9;
+}
+
+.footer-info img {
+  margin-bottom: 1rem;
+}
+
+.footer-info_icons {
+  display: flex;
+}
+
+.footer-info .footer-info_copyright {
+  color: #92A2AC;
+  margin-top: 2rem;
+}
+
+.footer-info .footer-info_icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-info .footer-info_icon img {
+  margin-top: 1px;
+  width: 27px;
+  height: 27px;
+}
+
+.footer-info .footer-info_icon {
+  margin-right: 8px;
+}
+
+.footer__links .footer__col:nth-last-child(-n + 3) {
+  text-align: right;
+}
+
+@media screen and (max-width: 996px) {
+  .footer__links .footer__col:nth-last-child(-n + 3) {
+    text-align: left;
+  }
+}
+
+.footer {
+  background-color: white;
+}
+
+.footer {
+  background-image: linear-gradient(#2563EB, #2563EB 100%);
+  background-size: 100% 10px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
