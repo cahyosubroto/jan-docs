@@ -68,15 +68,10 @@ const config = {
       items: [
         {
           type: 'doc',
-          docId: 'tutorial',
+          docId: 'quickstart',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Quickstart',
         },
-        { to: '/developer', label: 'Developer', position: 'left' },
-        { to: '/api-reference', label: 'API Reference', position: 'left' },
-        { to: '/framework', label: 'Framework', position: 'left' },
-        { to: '/blog', label: 'Blog', position: 'right' },
-        { to: '/about', label: 'About', position: 'right' },
       ],
     },
     footer: {
@@ -86,13 +81,9 @@ const config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/tutorial',
-            },
-            {
-              label: 'API Reference',
-              to: '/docs/api-reference',
-            },
+              label: 'Quickstart',
+              to: '/docs/quickstart', // Updated path
+            }
           ],
         },
         {
@@ -116,12 +107,8 @@ const config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/janhq/jan',
             },
           ],
         },
