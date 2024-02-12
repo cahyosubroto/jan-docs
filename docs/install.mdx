@@ -20,25 +20,25 @@ Ensure that your MacOS version is 13 or higher to run Jan.
 
         ### Stable Releases
 
-        For stable releases, go to [jan.ai](https://jan.ai/).
-
-        <img src={installImageURL} width={300} alt="jan-ai-download" />
+        To download stable releases, go to [Jan.ai](https://jan.ai/) > select **Download for Mac**.
 
         The download should be available as a `.dmg`.
 
         ### Nightly Releases
 
-        Jan is also available for more experimental version from jan's Discord in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
+        Jan is also available as a nightly release for an experimental version.
 
-        ### Uninstall
+        You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
 
-:::warning
+        ### Uninstall for Troubleshooting
 
-Considering that Jan is in development mode, there's a chance for you to stuck in a broken build.
+:::note
+
+If you are stuck in a broken build, try to uninstall Jan by following the steps below.
 
 :::
 
-        To uninstall,
+        To uninstall:
 
         1. Delete Jan from your `/Applications` folder.
         2. Delete Application data.
@@ -84,15 +84,15 @@ To enable GPU support, you will need:
 
         ### Stable Releases
 
-        For stable releases, go to [jan.ai](https://jan.ai/).
-
-        <img src={installImageURL} width={300} alt="jan-ai-download" />
+        To download stable releases, go to [Jan.ai](https://jan.ai/) > select **Download for Windows**.
         
         The download should be available as a `.exe` file.
 
         ### Nightly Releases
 
-        Jan is also available for more experimental version from jan's Discord in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
+        Jan is also available as a nightly release for an experimental version.
+
+        You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
 
         ### Default Installation Directory
 
@@ -103,15 +103,15 @@ To enable GPU support, you will need:
         C:\Users\{username}\AppData\Local\Programs\Jan
         ```
 
-        ### Uninstall
+        ### Uninstall​ for Troubleshooting
 
-:::warning
+:::note
 
-Considering that Jan is in development mode, there's a chance for you to stuck in a broken build.
+If you are stuck in a broken build, try to uninstall Jan by following the steps below.
 
 :::
 
-        To uninstall Jan on Windows, use the [Windows Control Panel](https://support.microsoft.com/en-us/windows/uninstall-or-remove-apps-and-programs-in-windows-4b55f974-2cc6-2d2b-d092-5905080eaf98).
+        To uninstall Jan on Windows, uninstall it via [Windows Control Panel](https://support.microsoft.com/en-us/windows/uninstall-or-remove-apps-and-programs-in-windows-4b55f974-2cc6-2d2b-d092-5905080eaf98).
 
         To remove all user data associated with Jan, you can delete the `/jan` directory in Windows' [AppData directory](https://superuser.com/questions/632891/what-is-appdata).
 
@@ -135,11 +135,15 @@ To enable GPU support, you will need:
 
         ### Stable Releases
 
-        For stable releases, go to [jan.ai](https://jan.ai/).
-
-        <img src={installImageURL} width={300} alt="jan-ai-download" />
+        To download stable releases, go to [Jan.ai](https://jan.ai/) > select **Download for Linux**.
         
-        the download should be available as a `.AppImage` file or a `.deb` file.
+        The download should be available as a `.AppImage` file or a `.deb` file.
+
+        ### Nightly Releases
+
+        Jan is also available as a nightly release for an experimental version.
+        
+        You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
 
         <Tabs groupId="linux_type">
             <TabItem value="linux_main" label="Linux">
@@ -149,7 +153,7 @@ To enable GPU support, you will need:
             </TabItem>
             <TabItem value="deb_ub" label="Debian / Ubuntu">
             
-                To install Jan, you can install Jan using the following command:
+                To install Jan, run the following command:
 
                 ```sh
                 # Install Jan using dpkg
@@ -161,13 +165,9 @@ To enable GPU support, you will need:
                 ```
 
             </TabItem>
-            <TabItem value="other" label="Other">
+            <TabItem value="other" label="Others">
 
-                To install Jan, you launch the AppImage file without installation. 
-                
-                To do so, you need to make the AppImage file executable and then run it. 
-                
-                You can do this either through your file manager's properties dialog or with the following commands:
+                To install Jan, run the following commands:
 
                 ```sh
                 # Install Jan using AppImage
@@ -179,15 +179,11 @@ To enable GPU support, you will need:
             </TabItem>
         </Tabs>
 
-        ### Nightly Releases
+        ### Uninstall​ for Troubleshooting
 
-        Jan is also available for more experimental version from jan's Discord in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
+:::note
 
-        ### Uninstall
-
-:::warning
-
-Considering that Jan is in development mode, there's a chance for you to stuck in a broken build.
+If you are stuck in a broken build, try to uninstall Jan by following the steps below.
 
 :::
 
@@ -195,28 +191,35 @@ Considering that Jan is in development mode, there's a chance for you to stuck i
             <TabItem value="linux_main" label="Linux">
 
                 To uninstall Jan, you should use your package manager's uninstall or remove option. 
+
+                This will return your system to its state before the installation of Jan.
+
+                This method can also reset all settings if you are experiencing any issues with Jan.
         
             </TabItem>
             <TabItem value="deb_ub" label="Debian / Ubuntu">
             
-                To uninstall Jan,, if you installed Jan via the `.deb` package, you can uninstall Jan using the following command.MDXContent
+                To uninstall Jan, run the following command.MDXContent
 
                 ```sh
                 sudo apt-get remove jan
                 # where jan is the name of Jan package
                 ```
 
-            </TabItem>
-            <TabItem value="other" label="Other">
-            
-                To uninstall Jan, if you installed Jan via the `.AppImage` file, you can uninstall Jan by deleting the `.AppImage` file.
+                This will return your system to its state before the installation of Jan.
 
-                In case you wish to completely remove all user data associated with Jan after uninstallation, you can delete the user data folders located at `~/jan`.
+                This method can also be used to reset all settings if you are experiencing any issues with Jan.
+
+            </TabItem>
+            <TabItem value="other" label="Others">
+            
+                To uninstall Jan, you can uninstall Jan by deleting the `.AppImage` file.
+
+                If you wish to completely remove all user data associated with Jan after uninstallation, you can delete the user data at `~/jan`.
+
+                This method can also reset all settings if you are experiencing any issues with Jan.
                 
             </TabItem>
         </Tabs>
-        
-        This will return your system to its state prior to the installation of Jan. This method can also be used to reset all settings if you are experiencing any issues with Jan.
-
     </TabItem>
 </Tabs>
