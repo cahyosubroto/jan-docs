@@ -5,7 +5,7 @@ sidebar_position: 3
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Import Models Manually
+# Manual Import
 
 :::warning
 
@@ -13,18 +13,17 @@ This is currently under development.
 
 :::
 
-In this section, we will show you how to import a GGUF model from [HuggingFace](https://huggingface.co/), using our latest model, [Trinity](https://huggingface.co/janhq/trinity-v1-GGUF), as an example.
+This section will show you how to import a GGUF model from [HuggingFace](https://huggingface.co/), using our latest model, [Trinity](https://huggingface.co/janhq/trinity-v1-GGUF), as an example.
 
 :::note
 
-We are fast shipping a UI to make this easier, but it's a bit manual for now. Apologies. 🙏
+We are fast shipping a UI to make this easier, but it's currently more manual. Apologies. 🙏
 
 :::
 
 ## Manually Importing a Downloaded Model (nightly versions and v0.4.4+)
 
 ### 1. Create a Model Folder
-
 
 Navigate to the `~/jan/models` folder. You can find this folder by going to `App Settings` > `Advanced` > `Open App Directory`.
 
@@ -54,13 +53,11 @@ mkdir trinity-v1-7b
 
 ### 2. Drag & Drop the Model
 
-Drag and drop your model binary into this folder, ensuring the `modelname.gguf` is the same name as the folder name, e.g. `models/modelname`
+Drag and drop your model binary into this folder, ensuring the `modelname.gguf` is the same name as the folder name, e.g. `models/modelname`.
 
-### 3. Voila
+### 3. Ready to use the model
 
-If your model doesn't show up in the **Model Selector** in conversations, please restart the app.
-
-If that doesn't work, please feel free to join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
+If your model doesn't show up in the **Model Selector** in conversations, **restart the app**.
 
 ## Manually Importing a Downloaded Model (older versions)
 
@@ -163,4 +160,4 @@ Restart Jan and navigate to the Hub. Locate your model and click the Download bu
 
 ## Assistance and Support
 
-If you have questions or are looking for more preconfigured GGUF models, please feel free to join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
+If you have questions, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
