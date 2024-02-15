@@ -8,7 +8,7 @@ async function fetchData(siteConfig) {
   const repo = siteConfig.customFields.projectName;
   const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases`;
 
-  const outputDirectory = path.join(__dirname, '../../docs/changelogs');
+  const outputDirectory = path.join(__dirname, '../../docs/changelogs-v2');
 
   if (!fs.existsSync(outputDirectory)) {
     fs.mkdirSync(outputDirectory);
