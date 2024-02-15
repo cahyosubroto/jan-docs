@@ -85,7 +85,7 @@ async function fetchData(siteConfig) {
 
     // Create _category_.json file
     const categoryContent = {
-      label: 'Changelog',
+      label: 'Changelog-v2',
       position: 5,
       link: {
         type: 'generated-index',
