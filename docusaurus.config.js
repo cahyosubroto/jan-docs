@@ -5,6 +5,7 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from 'prism-react-renderer';
+const path = require('path');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const config = {
@@ -123,6 +124,17 @@ const config = {
       disableSwitch: true,
     },
   },
+
+  customFields: {
+    githubAccessToken: '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',
+    organizationName: 'janhq',
+    projectName: 'jan'
+  },
+
+  plugins: [
+    // ... (other Docusaurus plugins)
+    path.resolve(__dirname, 'plugins', 'changelog-plugin'),
+  ],
 };
 
 export default config;
