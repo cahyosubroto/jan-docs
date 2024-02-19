@@ -123,7 +123,7 @@ const config = {
     },
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: false,
+      disableSwitch: true,
     },
     // algolia: {
     //   // The application ID provided by Algolia
