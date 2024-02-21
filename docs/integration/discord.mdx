@@ -30,11 +30,11 @@ pip install -r requirements.txt
 
 ### Step 3: Create a copy of `.env.example`, named `.env`, and set it up
 
-| Setting |	Instructions |
+| Setting | Instructions |
 | ------- | ------------ |
 | DISCORD_BOT_TOKEN | Generate a new Discord application at [discord.com/developers/applications](https://discord.com/developers/applications), obtain a token from the Bot tab, and enable MESSAGE CONTENT INTENT. |
-| LLM | Follow [LiteLLM instructions](https://github.com/BerriAI/litellm?tab=readme-ov-file#supported-providers-docs) for model name formatting when using supported providers like [OpenAI API](https://docs.litellm.ai/docs/providers/openai), [Mistral API](https://docs.litellm.ai/docs/providers/mistral), [ollama](https://docs.litellm.ai/docs/providers/ollama), etc. For [Jan](https://jan.ai/), set to `local/openai/(MODEL_NAME)`, where `(MODEL_NAME)` is your loaded model's name. |
-| CUSTOM_SYSTEM_PROMPT | Make any changes you want to adjust the bot's behavior. |
+| LLM | Follow [LiteLLM instructions](https://github.com/BerriAI/litellm?tab=readme-ov-file#supported-providers-docs) for model name formatting with supported providers like [OpenAI API](https://docs.litellm.ai/docs/providers/openai), [Mistral API](https://docs.litellm.ai/docs/providers/mistral), [ollama](https://docs.litellm.ai/docs/providers/ollama), etc. For [Jan](https://jan.ai/), set to `local/openai/(MODEL_NAME)`, where `(MODEL_NAME)` is your loaded model's name. |
+| CUSTOM_SYSTEM_PROMPT | Adjust the bot's behavior as needed. |
 | CUSTOM_DISCORD_STATUS | Set a custom message for the bot's Discord profile. (Max 128 characters) | 
 | ALLOWED_CHANNEL_IDS | Enter Discord channel IDs where the bot can send messages, separated by commas. Leave blank to allow all channels. |
 | ALLOWED_ROLE_IDS | Enter Discord role IDs allowed to use the bot, separated by commas. Leave blank to allow everyone. Including at least one role also disables DMs. |

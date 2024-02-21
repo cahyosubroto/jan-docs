@@ -45,21 +45,33 @@ The table below describes the parameters in the `nitro.json` file.
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-| `ctx_len` | **Integer** | The context length for the model operations. |
-| `ngl` | **Integer** | The number of GPU layers to use. |
-| `cpu_threads` | **Integer** | The number of threads to use for inferencing (CPU mode only) |
-| `cont_batching` | **Integer** | Whether to use continuous batching. |
-| `embedding` | **Integer** | Whether to use embedding in the model. |
+| `ctx_len` | **Integer** | Typically set at `2048`, `ctx_len` provides ample context for model operations like `GPT-3.5`. (*Maximum*: `4096`, *Minimum*: `1`) |
+| `ngl` | **Integer** | Defaulted at `100`, `ngl` determines GPU layer usage. |
+| `cpu_threads` | **Integer** | Determines CPU inference threads, limited by hardware and OS. (*Maximum* determined by system) |
+| `cont_batching` | **Integer** | Controls continuous batching, enhancing throughput for LLM inference. |
+| `embedding` | **Integer** | Enables embedding utilization for tasks like document-enhanced chat in RAG-based applications. |
 
 ### Additionl Info
 
- - By default, `ngl` is set to `100`, offloading all.
-    - To utilize 50% of the GPU, set `ngl` to `15`, as *Mistral* or *Llama* models typically have about 30 layers.
-    - For more info, go to [this section](/docs/references/software).
- - To activate the embedding feature, add the JSON parameter `"embedding" : true`. 
-    - This enables Nitro to process inferences with embedding capabilities. See the Nitro documentation for details on [Embedding](https://nitro.jan.ai/features/embed).
- - For improved throughput and reduced latency in large language model (LLM) inference, consult the [Continuous Batching](https://nitro.jan.ai/features/cont-batch) section in the Nitro documentation.
-    - For more info regarding `cont_batching`, go to [this section](/docs/references/software)
+- **`ctx_len`:**
+  - Adjusting the value:
+    - Maximizing widens the model's context, while minimizing focuses solely on the input prompt.
+- **`ngl`:**
+  - GPU utilization:
+    - Set `ngl` to `15` to use 50% of the GPU, suitable for models like *Mistral* or *Llama* with around 30 layers.
+    - At `ngl = 100`, all model layers load onto the GPU, typically containing 32-64 layers. Thus, behavior at `ngl = 400` mirrors that at `100`.
+- **`cpu_threads`:**
+  - Check system specifications and OS documentation to determine supported maximum thread count.
+- **`cont_batching`:**
+  - Explore the [Continuous Batching](https://nitro.jan.ai/features/cont-batch) section in the Nitro documentation.
+  - Use cases:
+    - Beneficial for scenarios like chatbots, consolidating multiple requests for improved performance.
+    - Particularly effective for large language models, enhancing efficiency by merging requests into batches for faster responses.
+    - Exercise caution as it may not suit all scenarios, such as brief model execution or highly variable requests. Compatibility may vary with models or inference backends.
+- **`embedding`:**
+  - Activation:
+    - Enable embedding feature by adding the JSON parameter `"embedding" : true`.
+    - Allows Nitro to process inferences with embedding capabilities. Refer to the Nitro documentation for [Embedding](https://nitro.jan.ai/features/embed) details.
 
 :::info[Assistance and Support]
 
