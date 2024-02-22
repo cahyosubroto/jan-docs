@@ -1,0 +1,19 @@
+---
+sidebar_position: 1
+---
+
+# Error Code: `Permission Denied`
+
+When running Jan, you might encounter this error:
+
+```
+Uncaught (in promise) Error: Error invoking layout-480796bff433a3a3.js:538 remote method 'installExtension':
+Error Package /Applications/Jan.app/Contents/Resources/app.asar.unpacked/pre-install/janhq-assistant-extension-1.0.0.tgz does not contain a valid manifest:
+Error EACCES: permission denied, mkdtemp '/Users/username/.npm/_cacache/tmp/ueCMn4'
+```
+
+This error suggests a permission problem during installation. To resolve it, execute the following command to change ownership of the `~/.npm` directory to the current user:
+
+```
+sudo chown -R $(whoami) ~/.npm
+```
