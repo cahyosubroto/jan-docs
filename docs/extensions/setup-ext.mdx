@@ -2,40 +2,51 @@
 sidebar_position: 1
 ---
 
+import janExtensionSetup from './img/extension-setup.png';
+
 # Extension Setup
 
-The current Jan Desktop Client has some default extensions built on this framework to enhance the user experience. 
-
-This guide will show you the list of default extensions and how to configure extension settings.
+The current Jan Desktop Client has some default extensions built on top of this framework to enhance the user experience. In this guide, we will show you the list of default extensions and how to configure extension settings.
 
 ## Default Extensions
 
 You can find the default extensions in the `Settings` > `Extensions`.
 
+
+<div class="text--center"> 
+    <img src={janExtensionSetup} width={800} alt="jan-extension-setup" />
+</div>
+
 ## List of Default Extensions
 
 | Extension Name | Version | Description | Source Code Link |
 | -------------- | ------- | ----------- | ---------------- |
-| Assistant Extension | `v1.0.0` | Enables Jan and other assistants to call models. | [Source](https://github.com/janhq/jan/tree/main/extensions/assistant-extension) |
-| Conversational Extension | `v1.0.0` | Enables conversations and state persistence via filesystem. | [Source](https://github.com/janhq/jan/tree/main/extensions/conversational-extension) |
-| Inference Nitro Extension | `v1.0.0` | Embeds Nitro, a lightweight C++ inference engine. See [nitro.jan.ai](https://jan.ai/guides/using-extensions/extension-settings/nitro.jan.ai/). | [Source](https://github.com/janhq/jan/tree/main/extensions/inference-nitro-extension) |
-| Inference Openai Extension | `v1.0.0` | Enables OpenAI chat completion API calls. | [Source](https://github.com/janhq/jan/tree/main/extensions/inference-openai-extension) |
-| Inference Triton Trt Llm Extension | `v1.0.0` | Enables Nvidia's TensorRT-LLM as an inference engine option. | [Source](https://github.com/janhq/jan/tree/main/extensions/inference-triton-trtllm-extension) |
-| Model Extension | `v1.0.22` | Provides model exploration and downloads. | [Source](https://github.com/janhq/jan/tree/main/extensions/model-extension) |
-| Monitoring Extension | `v1.0.9` | Offers system health and OS-level data monitoring. | [Source](https://github.com/janhq/jan/tree/main/extensions/monitoring-extension) |
+| Assistant Extension | `v1.0.0` | This extension enables assistants, including Jan, a default assistant that can call all downloaded models. | [Link to Source](https://github.com/janhq/jan/tree/dev/extensions/assistant-extension ) |
+| Conversational Extension | `v1.0.0` | This extension enables conversations and state persistence via your filesystem. | [Link to Source](https://github.com/janhq/jan/tree/dev/extensions/conversational-extension) |
+| Inference Nitro Extension | `v1.0.0` | This extension embeds Nitro, a lightweight (3 MB) inference engine in C++. See nitro.jan.ai. | [Link to Source](https://github.com/janhq/jan/tree/dev/extensions/inference-nitro-extension) |
+| Inference Openai Extension | `v1.0.0` | This extension enables OpenAI chat completion API calls. | [Link to Source](https://github.com/janhq/jan/tree/dev/extensions/inference-openai-extension) |
+| Inference Triton Trt Llm Extension | `v1.0.0` | This extension enables Nvidia's TensorRT-LLM as an inference engine option. | [Link to Source](https://github.com/janhq/jan/tree/dev/extensions/inference-triton-trtllm-extension) |
+| Model Extension | `v1.0.22` | Model Management Extension provides model exploration and seamless downloads. | [Link to Source](https://github.com/janhq/jan/tree/dev/extensions/model-extension) |
+| Monitoring Extension | `v1.0.9` | This extension offers system health and OS-level data. | [Link to Source](https://github.com/janhq/jan/tree/dev/extensions/monitoring-extension) |
 
 ## Configure Extension Settings
-To configure extension settings, edit the `extensions.json` file in `~/jan/extensions`, with options including:
+To configure extension settings:
+1. Navigate to the `~/jan/extensions`.
+2. Open the `extensions.json` file
+3. Edit the file with options including:
 
- - `_active`: Enable/disable the extension.
- - `listeners`: Default listener setting.
- - `origin`: Extension file path.
- - `installOptions`: Version and metadata configuration.
- - `name`: Extension name.
- - `version`: Extension version.
- - `main`: Main file path.
- - `description`: Extension description.
- - `url`: Extension URL.
+| Option          | Description                                     |
+|-----------------|-------------------------------------------------|
+| `_active`       | Enable/disable the extension.                   |
+| `listeners`     | Default listener setting.                       |
+| `origin`        | Extension file path.                            |
+| `installOptions`| Version and metadata configuration.             |
+| `name`          | Extension name.                                 |
+| `version`       | Extension version.                              |
+| `main`          | Main file path.                                 |
+| `description`   | Extension description.                          |
+| `url`           | Extension URL.                                  |
+
 
 ```json title="~/jan/extensions/extensions.json"
 {

@@ -16,9 +16,9 @@ This guide will show you how to configure Jan as a client and point it to any re
 
 ### 1. Create a Model JSON
 
-In `~/jan/models`, create a folder named `gpt-3.5-turbo-16k`.
+1. In `~/jan/models`, create a folder named `gpt-3.5-turbo-16k`.
 
-In this folder, add a `model.json` file with Filename as `model.json`, `id` matching folder name, `Format` as `api`, `Engine` as `openai`, and `State` as `ready`.
+2. In this folder, add a `model.json` file with Filename as `model.json`, `id` matching folder name, `Format` as `api`, `Engine` as `openai`, and `State` as `ready`.
 
 
 ```json title="~/jan/models/gpt-3.5-turbo-16k/model.json"
@@ -55,7 +55,8 @@ In this folder, add a `model.json` file with Filename as `model.json`, `id` matc
 
 ### 2. Configure OpenAI API Keys
 
-You can find your API keys in the [OpenAI Platform](https://platform.openai.com/api-keys) and set the OpenAI API keys in `~/jan/engines/openai.json` file.
+1. Find your API keys in the [OpenAI Platform](https://platform.openai.com/api-keys).
+2. Set the OpenAI API keys in `~/jan/engines/openai.json` file.
 
 ```json title="~/jan/engines/openai.json"
 {
@@ -80,9 +81,16 @@ Currently, you can only connect to one OpenAI-compatible endpoint at a time.
 
 ### 1. Configure a Client Connection
 
-Navigate to the `~/jan/engines` folder and modify the `openai.json file`. Please note that currently, the code that supports any OpenAI-compatible endpoint only reads `engine/openai.json` file. Thus, it will not search any other files in this directory.
+1. Navigate to the `~/jan/engines` folder.
+2. Modify the `openai.json file`. 
 
-Configure `full_url` properties with the endpoint server that you want to connect. For example, if you're going to communicate to Jan's API server, you can configure it as follows:
+:::note
+
+Please note that currently, the code that supports any OpenAI-compatible endpoint only reads `engine/openai.json` file. Thus, it will not search any other files in this directory.
+
+:::
+
+3. Configure `full_url` properties with the endpoint server that you want to connect. For example, if you're going to communicate to Jan's API server, you can configure it as follows:
 
 ```json title="~/jan/engines/openai.json"
 {
@@ -95,9 +103,9 @@ Configure `full_url` properties with the endpoint server that you want to connec
 
 ### 2. Create a Model JSON
 
-In `~/jan/models`, create a folder named `mistral-ins-7b-q4`.
+1. In `~/jan/models`, create a folder named `mistral-ins-7b-q4`.
 
-In this folder, add a `model.json` file with Filename as `model.json`, `id` matching folder name, `Format` as `api`, `Engine` as `openai`, and `State` as `ready`.
+2. In this folder, add a `model.json` file with Filename as `model.json`, `id` matching folder name, `Format` as `api`, `Engine` as `openai`, and `State` as `ready`.
 
 
 ```json title="~/jan/models/mistral-ins-7b-q4/model.json"
@@ -126,7 +134,7 @@ In this folder, add a `model.json` file with Filename as `model.json`, `id` matc
 
 ### 3. Start the Model
 
-Restart Jan and navigate to the Hub. Locate your model and click the Use button.
+Restart Jan and navigate to the **Hub**. Locate your model and click the **Use** button.
 
 :::info[Assistance and Support]
 

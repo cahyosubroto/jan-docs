@@ -4,6 +4,7 @@ sidebar_position: 3
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import janModel from './img/jan-model-hub.png';
 
 # Manual Import
 
@@ -13,19 +14,13 @@ This is currently under development.
 
 :::
 
-This section will show you how to import a GGUF model from [HuggingFace](https://huggingface.co/), using our latest model, [Trinity](https://huggingface.co/janhq/trinity-v1-GGUF), as an example.
+This section will show you how to perform manual import. In this guide, we are using a GGUF model from [HuggingFace](https://huggingface.co/) and our latest model, [Trinity](https://huggingface.co/janhq/trinity-v1-GGUF), as an example.
 
-:::note
-
-We are fast shipping a UI to make this easier, but it's currently more manual. Apologies. 🙏
-
-:::
-
-## Manually Importing a Downloaded Model (nightly versions and v0.4.4+)
+## Newer versions - nightly versions and v0.4.4+
 
 ### 1. Create a Model Folder
 
-Navigate to the `~/jan/models` folder. You can find this folder by going to `App Settings` > `Advanced` > `Open App Directory`.
+1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/jan/models` folder.
 
 <Tabs>
     <TabItem value="mac" label="MacOS" default>
@@ -45,7 +40,7 @@ Navigate to the `~/jan/models` folder. You can find this folder by going to `App
     </TabItem>
 </Tabs>
 
-In the `models` folder, create a folder with the name of the model.
+2. In the `models` folder, create a folder with the name of the model.
 
 ```sh
 mkdir trinity-v1-7b
@@ -55,15 +50,15 @@ mkdir trinity-v1-7b
 
 Drag and drop your model binary into this folder, ensuring the `modelname.gguf` is the same name as the folder name, e.g. `models/modelname`.
 
-### 3. Ready to use the model
+### 3. Done!
 
-If your model doesn't show up in the **Model Selector** in conversations, **restart the app**.
+If your model doesn't show up in the **Model Selector** in conversations, **restart the app** or contact us via our [Discord community](https://discord.gg/Dt7MxDyNNZ).
 
-## Manually Importing a Downloaded Model (older versions)
+## Older versions - before v0.44
 
 ### 1. Create a Model Folder
 
-Navigate to the `~/jan/models` folder. You can find this folder by going to `App Settings` > `Advanced` > `Open App Directory`.
+1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/jan/models` folder.
 
 <Tabs>
     <TabItem value="mac" label="MacOS" default>
@@ -83,7 +78,7 @@ Navigate to the `~/jan/models` folder. You can find this folder by going to `App
     </TabItem>
 </Tabs>
 
-In the `models` folder, create a folder with the name of the model.
+2. In the `models` folder, create a folder with the name of the model.
 
 ```sh
 mkdir trinity-v1-7b
@@ -118,11 +113,10 @@ This means that you can easily reconfigure your models, export them, and share y
 
 To update `model.json`:
 
- - Confirm filename: `model.json`.
  - Match `id` with folder name.
  - Ensure GGUF filename matches `id`.
- - Set `source.url` to direct download link ending in `.gguf`.
- - Verify `prompt_template` as per HuggingFace model's description.
+ - Set `source.url` to direct download link ending in `.gguf`. In HuggingFace, you can find the direct links in the `Files and versions` tab.
+ - Verify that you are using the correct `prompt_template`. This is usually provided in the HuggingFace model's description page.
 
 ```json title="model.json"
 {
@@ -156,7 +150,13 @@ To update `model.json`:
 ```
 ### 3. Download the Model
 
-Restart Jan and navigate to the Hub. Locate your model and click the Download button to download the model binary.
+1. Restart Jan and navigate to the Hub. 
+2. Locate your model.
+3. Click **Download** button to download the model binary.
+
+<div class="text--center"> 
+    <img src={janModel} width={800} alt="jan-model-hub" />
+</div>
 
 :::info[Assistance and Support]
 

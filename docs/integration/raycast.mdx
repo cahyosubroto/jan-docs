@@ -2,21 +2,28 @@
 sidebar_position: 4
 ---
 
-# Jan Integration for Raycast
+import raycast from './img/raycast.png';
+import raycastImage from './img/raycast-image.png';
+
+# Raycast
 
 ## Overview
+[Raycast](https://www.raycast.com/) is a productivity tool designed for macOS that enhances workflow efficiency by providing quick access to various tasks and functionalities through a keyboard-driven interface.
 
-This guide will show you how to integrate Raycast with Jan.
+## How to Integrate Raycast
 
-## Steps for Integration
+<div class="text--center"> 
+    <img src={raycast} width={800} alt="raycast" />
+</div>
 
 ### Step 1: Download the TinyLlama model from Jan
 
-Go to the Hub and download the TinyLlama model. The model will be available at `~jan/models/tinyllama-1.1b`.
+Go to the **Hub** and download the TinyLlama model. The model will be available at `~jan/models/tinyllama-1.1b`.
 
 ### Step 2: Clone and Run the Program
 
-Clone the [GitHub repository](https://github.com/InNoobWeTrust/nitro-raycast) for the Raycast integration program and execute the project using the provided command.
+1. Clone this [GitHub repository](https://github.com/InNoobWeTrust/nitro-raycast).
+2. Execute the project using the    following command:
 
 ```sh
 npm i && npm run dev
@@ -26,4 +33,6 @@ npm i && npm run dev
 
 Search for `Nitro` using the program and you can use the models from Jan in RayCast.
 
-## Use Case for Jan Integration with Raycast
+<div class="text--center"> 
+    <img src={raycastImage} width={800} alt="raycast" />
+</div>

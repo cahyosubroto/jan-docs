@@ -81,3 +81,12 @@ html {
   background-repeat: no-repeat;
   background-position: center bottom;
 }
+
+/* Override Prism.js styles for code highlighting */
+pre[class*="language-"] {
+  background: #333 !important; /* Set background color to black */
+}
+
+.token {
+  color: #fff !important; /* Set text color to white */
+}
