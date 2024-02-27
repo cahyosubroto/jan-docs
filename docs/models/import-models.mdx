@@ -22,23 +22,23 @@ This section will show you how to perform manual import. In this guide, we are u
 
 1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/jan/models` folder.
 
-< Tabs groupId = "operating-systems" >
+<Tabs groupId = "operating-systems" >
     <TabItem value="mac" label = "MacOS" default>
         ```sh
         cd ~/jan/models
         ```
-    < /TabItem>
-    < TabItem value = "windows" label = "Windows" default>
+    </TabItem>
+    <TabItem value = "windows" label = "Windows" default>
         ```sh
         C:/Users/<your_user_name>/jan/models
         ```
-    < /TabItem>
-    < TabItem value = "linux" label = "Linux" default>
+    </TabItem>
+    <TabItem value = "linux" label = "Linux" default>
         ```sh
         cd ~/jan/models
         ```
-    < /TabItem>
-< /Tabs>
+    </TabItem>
+</Tabs>
 
 2. In the `models` folder, create a folder with the name of the model.
 
@@ -60,23 +60,23 @@ If your model doesn't show up in the **Model Selector** in conversations, **rest
 
 1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/jan/models` folder.
 
-< Tabs groupId = "operating-systems" >
+<Tabs groupId = "operating-systems" >
     <TabItem value="mac" label = "MacOS" default>
         ```sh
         cd ~/jan/models
         ```
-    < /TabItem>
-    < TabItem value = "windows" label = "Windows" default>
+    </TabItem>
+    <TabItem value = "windows" label = "Windows" default>
         ```sh
         C:/Users/<your_user_name>/jan/models
         ```
-    < /TabItem>
-    < TabItem value = "linux" label = "Linux" default>
+    </TabItem>
+    <TabItem value = "linux" label = "Linux" default>
         ```sh
         cd ~/jan/models
         ```
-    < /TabItem>
-< /Tabs>
+    </TabItem>
+</Tabs>
 
 2. In the `models` folder, create a folder with the name of the model.
 
@@ -90,26 +90,26 @@ Jan follows a folder-based, [standard model template](https://jan.ai/docs/engine
 
 This means that you can easily reconfigure your models, export them, and share your preferences transparently.
 
-< Tabs groupId = "operating-systems" >
+<Tabs groupId = "operating-systems" >
     <TabItem value="mac" label = "MacOS" default>
         ```sh
         cd trinity-v1-7b
         touch model.json
         ```
-    < /TabItem>
-    < TabItem value = "windows" label = "Windows" default>
+    </TabItem>
+    <TabItem value = "windows" label = "Windows" default>
         ```sh
         cd trinity-v1-7b
         echo {} > model.json
         ```
-    < /TabItem>
-    < TabItem value = "linux" label = "Linux" default>
+    </TabItem>
+    <TabItem value = "linux" label = "Linux" default>
         ```sh
         cd trinity-v1-7b
         touch model.json
         ```
-    < /TabItem>
-< /Tabs>
+    </TabItem>
+</Tabs>
 
 To update `model.json`:
 
@@ -155,8 +155,8 @@ To update `model.json`:
   - `ctx_len`: Defined based on the model's context size.
   - `prompt_template`: Defined based on the model's trained template (e.g., ChatML, Alpaca).
   - To set up the `prompt_template`:
-    1. Visit Hugging Face.
-    2. Locate the model (e.g., [Gemma 7b it](https://huggingface.co/google/gemma-7b-it)).
+    1. Visit [Hugging Face](https://huggingface.co/), an open-source machine learning platform.
+    2. Find the current model that you're using (e.g., [Gemma 7b it](https://huggingface.co/google/gemma-7b-it)).
     3. Review the text and identify the template.
 - In `parameters`, consider the following options. The fields in `parameters` are typically general and can be the same across models. An example is provided below:
 
@@ -177,7 +177,7 @@ To update `model.json`:
 2. Locate your model.
 3. Click **Download** button to download the model binary.
 
-< div class="text--center" > 
+<div class="text--center" > 
     <img src={ janModel } width = { 800} alt = "jan-model-hub" />
 </div>
 
