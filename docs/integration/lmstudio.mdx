@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# Jan Integration with LM Studio
+# LM Studio
 
 ## Overview
 
@@ -10,7 +10,7 @@ This tutorial illustrates how to integrate with LM STudio using Jan.
 
 [LM Studio](https://lmstudio.ai/) enables you to explore, download, and run local Large Language Models (LLMs). This guide demonstrates two methods to integrate and utilize your existing LM Studio models with Jan. The first method involves integrating the LM Studio server with Jan UI, while the second method involves migrating your downloaded model from LM Studio to Jan. We'll illustrate using the [Phi 2 - GGUF](https://huggingface.co/TheBloke/phi-2-GGUF) model from Hugging Face as an example.
 
-## Integrating LM Studio with Jan
+## How to Integrate LM Studio with Jan
 
 ### Step 1: LM Studio Server Setup
 
@@ -64,6 +64,28 @@ Replace `(port)` with your chosen port number. The default is 1234.
   "engine": "openai"
 }
 ```
+#### Regarding `model.json`
+
+- In `settings`, two crucial values are:
+  - `ctx_len`: Defined based on the model's context size.
+  - `prompt_template`: Defined based on the model's trained template (e.g., ChatML, Alpaca).
+  - To set up the `prompt_template`:
+    1. Visit Hugging Face.
+    2. Locate the model (e.g., [Gemma 7b it](https://huggingface.co/google/gemma-7b-it)).
+    3. Review the text and identify the template.
+- In `parameters`, consider the following options. The fields in `parameters` are typically general and can be the same across models. An example is provided below:
+
+```json
+"parameters":{
+  "temperature": 0.7,
+  "top_p": 0.95,
+  "stream": true,
+  "max_tokens": 4096,
+  "frequency_penalty": 0,
+  "presence_penalty": 0
+}
+```
+
 
 ### Step 3: Starting the Model
 

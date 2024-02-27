@@ -5,7 +5,7 @@ sidebar_position: 2
 import switchGPU from "./img/janSwitchCPUtoGPU.gif";
 import openDirectory from "./img/janOpenAppDirectory.gif";
 
-## Jan not using GPU
+# Jan not using GPU
 
 This guide provides steps to troubleshoot and resolve issues when the Jan app does not utilize the GPU on Windows and Linux systems.
 
@@ -41,7 +41,7 @@ nvcc --version
 
 Jan defaults to CPU mode but automatically switches to GPU mode if your system supports it, selecting the GPU with the highest VRAM. Check this setting in `Settings` > `Advanced Settings`.
 
-< div class="text--center" > 
+<div class="text--center" > 
     <img src={ switchGPU } width = { 800 } alt = "janSwitchCPUtoGPU" />
 </div>
 
@@ -57,7 +57,7 @@ If GPU mode isn't enabled by default:
 
 1. Navigate to `Settings` > `Advanced Settings` > `Jan Data Folder` to access GPU settings.
 
-< div class="text--center" > 
+<div class="text--center" > 
     <img src={ openDirectory } width = { 800 } alt = "janOpenAppDirectory" />
 </div>
 
