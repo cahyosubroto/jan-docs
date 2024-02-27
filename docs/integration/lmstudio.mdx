@@ -73,12 +73,80 @@ Restart Jan and go to the Hub. Find your model and select the Use button.
 
 ### Step 1: Migrate Your Downloaded Model
 
-### Step 2: Migrate Your Downloaded Model
+1. Go to `My Models` in LM Studio and open the model folder.
+2. Copy the model folder to `~/jan/models`.
+3. Make sure the folder name matches the model name in the `.gguf` filename. Rename the folder if needed. For instance, we changed `TheBloke` to `phi-2.Q4_K_S`.
+
+### Step 2: Start the Model
+
+1. Restart Jan and go to the **Hub** where the model will be automatically detected and displayed.
+2. Find your model and click **Use** to try it out.
 
 ## Directing to the Downloaded Model of LM Studio from Jan (version 0.4.7+)
 
+From version 0.4.7 onwards, Jan supports importing models with an absolute filepath, allowing direct use from the LM Studio folder.
+
 ### Step 1: Reveal the Model Absolute Path
+
+1. Go to `My Models` in the LM Studio app and access the folder containing your model.
+2. Obtain the absolute path of your model.
 
 ### Step 2: Modify a Model JSON
 
+
+1. Go to the `~/jan/models` directory.
+2. Create a folder named `(modelname)` (e.g., `phi-2.Q4_K_S`).
+3. Inside the folder, create a `model.json` file with these settings:
+   - Set the `id` property to match the folder name you created.
+   - Use the direct binary download link ending in `.gguf` as the `url`. You can now use the absolute filepath of the model file. For instance, `/Users/<username>/.cache/lm-studio/models/TheBloke/phi-2-GGUF/phi-2.Q4_K_S.gguf`.
+   - Set the `engine` property to `nitro`.
+
+```json title="~/jan/models/mistral-tiny/model.json"
+{
+  "object": "model",
+  "version": 1,
+  "format": "gguf",
+  "sources": [
+    {
+      "filename": "phi-2.Q4_K_S.gguf",
+      "url": "<absolute-path-of-model-file>"
+    }
+  ],
+  "id": "phi-2.Q4_K_S",
+  "name": "phi-2.Q4_K_S",
+  "created": 1708308111506,
+  "description": "phi-2.Q4_K_S - user self import model",
+  "settings": {
+    "ctx_len": 4096,
+    "embedding": false,
+    "prompt_template": "{system_message}\n### Instruction: {prompt}\n### Response:",
+    "llama_model_path": "phi-2.Q4_K_S.gguf"
+  },
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "stream": true,
+    "max_tokens": 2048,
+    "stop": ["<endofstring>"],
+    "frequency_penalty": 0,
+    "presence_penalty": 0
+  },
+  "metadata": {
+    "size": 1615568736,
+    "author": "User",
+    "tags": []
+  },
+  "engine": "nitro"
+}
+```
+
+:::warning
+
+For Windows users, ensure to include double backslashes in the URL property, such as `C:\\Users\\username\\filename.gguf`.
+
+:::
+
 ### Step 3: Start the Model
+
+1. Restart Jan and go to the **Hub**, where the model will be automatically detected and displayed.
+2. Find your model and click **Use** to try it out.
