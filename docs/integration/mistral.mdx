@@ -12,9 +12,10 @@ This tutorial illustrates how to integrate with Mistral AI using Jan.
 
 ## Integrating Mistral AI with Jan
 
-### Step 1: Confingure Mistral API Key
+### Step 1: Configure Mistral API Key
 
-Find your API keys in the [Mistral API Key](https://console.mistral.ai/user/api-keys/) section, then input the Mistral AI API key into `~/jan/engines/openai.json`.
+1. Obtain your API keys from the [Mistral API Key](https://console.mistral.ai/user/api-keys/) section.
+2. Insert the Mistral AI API key into `~/jan/engines/openai.json`.
 
 ```json title="~/jan/engines/openai.json"
 {
@@ -23,11 +24,11 @@ Find your API keys in the [Mistral API Key](https://console.mistral.ai/user/api-
 }
 ```
 
-### Step 2: Modify a Model JSON
+### Step 2: Model Configuration
 
-1. Go to `~/jan/models`
-2. make a folder named `mistral-(modelname)` (i.e., `mistral-tiny`). 
-3. Create a `model.json` file with these settings:
+1. Navigate to `~/jan/models`.
+2. Create a folder named `mistral-(modelname)` (e.g., `mistral-tiny`).
+3. Inside, create a `model.json` file with these settings:
     - Set `id` to the Mistral AI model ID.
     - Set `format` to `api`.
     - Set `engine` to `openai`.
@@ -59,10 +60,11 @@ Find your API keys in the [Mistral API Key](https://console.mistral.ai/user/api-
 
 :::note
 
-Mistral AI provides different endpoints. Please check out their [endpoint documentation](https://docs.mistral.ai/platform/endpoints/) to find the one that suits your needs. In this example, we will use the `mistral-tiny` model.
+Mistral AI offers various endpoints. Refer to their [endpoint documentation](https://docs.mistral.ai/platform/endpoints/) to select the one that fits your requirements. Here, we use the `mistral-tiny` model as an example.
 
 :::
 
 ### Step 3: Start the Model
 
-Restart Jan and go to the Hub. Find your model and select the Use button.
+1. Restart Jan and navigate to the **Hub**. 
+2. Locate your model and click the **Use** button.

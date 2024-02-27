@@ -12,13 +12,13 @@ This tutorial illustrates how to integrate with LM STudio using Jan.
 
 ## Integrating LM Studio with Jan
 
-### Step 1: Start the LM Studio Server
+### Step 1: LM Studio Server Setup
 
-1. Go to the Local Inference Server within the LM Studio app.
-2. Choose the desired model.
-3. Initiate the server after adjusting the server port and options as needed.
+1. Access the Local Inference Server within LM Studio.
+2. Select your desired model.
+3. Start the server after configuring the port and options.
 
-Update the `openai.json` file in the `~/jan/engines` folder to include the complete URL of the LM Studio server.
+Update the `openai.json` file in `~/jan/engines` to include the LM Studio server's full URL.
 
 ```json title="~/jan/engines/openai.json"
 {
@@ -28,18 +28,18 @@ Update the `openai.json` file in the `~/jan/engines` folder to include the compl
 
 :::note
 
-Replace `(port)` with the port number you set in the LM Studio server. The default port is 1234.
+Replace `(port)` with your chosen port number. The default is 1234.
 
 :::
 
-### Step 2: Modify a Model JSON
+### Step 2: Model Configuration
 
-1. Go to the `~/jan/models` directory.
-2. Make a folder named `lmstudio-(modelname)` (i.e., `lmstudio-phi-2`). 
-3. Create a `model.json` file with these settings:
-  - Set `format` to `api`.
-  - Set `engine` to `openai`.
-  - Set `state` to `ready`.
+1. Navigate to `~/jan/models`.
+2. Create a folder named `lmstudio-(modelname)`, like `lmstudio-phi-2`.
+3. Inside, craft a `model.json` file with these directives:
+   - Set `format` to `api`.
+   - Specify `engine` as `openai`.
+   - Set `state` to `ready`.
   
 ```json title="~/jan/models/mistral-tiny/model.json"
 {
@@ -65,41 +65,41 @@ Replace `(port)` with the port number you set in the LM Studio server. The defau
 }
 ```
 
-### Step 3: Start the Model
+### Step 3: Starting the Model
 
-Restart Jan and go to the Hub. Find your model and select the Use button.
+1. Restart Jan and proceed to the **Hub**.
+2. Locate your model and click **Use** to activate it.
 
-## Migrating Your Downloaded Model from LM Studio to Jan (version 0.4.6 and older)
+## Migrating Models from LM Studio to Jan (version 0.4.6 and older)
 
-### Step 1: Migrate Your Downloaded Model
+### Step 1: Model Migration
 
-1. Go to `My Models` in LM Studio and open the model folder.
+1. In LM Studio, navigate to `My Models` and access your model folder.
 2. Copy the model folder to `~/jan/models`.
-3. Make sure the folder name matches the model name in the `.gguf` filename. Rename the folder if needed. For instance, we changed `TheBloke` to `phi-2.Q4_K_S`.
+3. Ensure the folder name matches the model name in the `.gguf` filename. Rename as necessary.
 
-### Step 2: Start the Model
+### Step 2: Activating the Model
 
-1. Restart Jan and go to the **Hub** where the model will be automatically detected and displayed.
-2. Find your model and click **Use** to try it out.
+1. Restart Jan and navigate to the Hub, where the model will be automatically detected.
+2. Click "Use" to utilize the model.
 
-## Directing to the Downloaded Model of LM Studio from Jan (version 0.4.7+)
+## Direct Access to LM Studio Models from Jan (version 0.4.7+)
 
-From version 0.4.7 onwards, Jan supports importing models with an absolute filepath, allowing direct use from the LM Studio folder.
+Starting from version 0.4.7, Jan enables direct import of LM Studio models using absolute file paths.
 
-### Step 1: Reveal the Model Absolute Path
+### Step 1: Locating the Model Path
 
-1. Go to `My Models` in the LM Studio app and access the folder containing your model.
+1. Access `My Models` in LM Studio and locate your model folder.
 2. Obtain the absolute path of your model.
 
-### Step 2: Modify a Model JSON
+### Step 2: Model Configuration
 
-
-1. Go to the `~/jan/models` directory.
+1. Go to `~/jan/models`.
 2. Create a folder named `(modelname)` (e.g., `phi-2.Q4_K_S`).
-3. Inside the folder, create a `model.json` file with these settings:
-   - Set the `id` property to match the folder name you created.
-   - Use the direct binary download link ending in `.gguf` as the `url`. You can now use the absolute filepath of the model file. For instance, `/Users/<username>/.cache/lm-studio/models/TheBloke/phi-2-GGUF/phi-2.Q4_K_S.gguf`.
-   - Set the `engine` property to `nitro`.
+3. Inside, craft a `model.json` file:
+   - Set `id` to match the folder name.
+   - Use the direct binary download link ending in `.gguf` as the `url`. You can now use the absolute filepath of the model file.
+   - Set `engine` as `nitro`.
 
 ```json title="~/jan/models/mistral-tiny/model.json"
 {
@@ -146,7 +146,7 @@ For Windows users, ensure to include double backslashes in the URL property, suc
 
 :::
 
-### Step 3: Start the Model
+### Step 3: Starting the Model
 
-1. Restart Jan and go to the **Hub**, where the model will be automatically detected and displayed.
-2. Find your model and click **Use** to try it out.
+1. Restart Jan and proceed to the **Hub**.
+2. Locate your model and click **Use** to activate it.
