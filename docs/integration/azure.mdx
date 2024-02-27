@@ -1,60 +1,92 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 ---
 
-import discord_repo from './img/jan-ai-discord-repo.png';
+import azure from './img/azure.png';
 
 # Azure OpenAI
 
 ## Overview
 
-This tutorial demonstrates the process of integrating with a Discord bot using Jan.
+This guide will show you how to integrate Azure OpenAI Service with Jan. The [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview?source=docs) offers robust APIs, making it simple for you to incorporate OpenAI's language models into your applications.
 
-Using a Discord bot enhances server interaction. Integrating Jan with it can significantly boost responsiveness and user engagement.
+## How to Integrate Azure OpenAI with Jan
 
-## How to Integrate Discord Bot with Jan
-
-### Step 1: Clone the repository
-
-To make this integration successful, it is necessary to clone the discord bot's [repository](https://github.com/jakobdylanc/discord-llm-chatbot).
-
-<div class="text--center"> 
-    <img src={discord_repo} width={600} alt="jan-ai-discord-repo" />
+<div class="text--center" > 
+    <img src={ azure } width = { 800} alt = "azure" />
 </div>
 
-### Step 2: Install the requirement libraries
+### Step 1: Configure Azure OpenAI Service API Key
 
-After cloning the repository, run the following command:
+1. Set yp and deploy the Azure OpenAI Service.
+2. Once you've set up and deployed Azure OpenAI Service, you can find the endpoint and API key in [Azure OpenAI Studio](https://oai.azure.com/) under `Chat` > `View code`.
 
-```sh
-pip install -r requirements.txt
+3. Set up the endpoint and API key for Azure OpenAI Service in the `~/jan/engines/openai.json` file.
+
+```json title="~/jan/engines/openai.json"
+{
+  // https://hieujan.openai.azure.com/openai/deployments/gpt-35-hieu-jan/chat/completions?api-version=2023-07-01-preview
+  "full_url": "https://<your-resource-name>.openai.azure.com/openai/deployments/<your-deployment-name>/chat/completions?api-version=<api-version>",
+  "api_key": "<your-api-key>"
+}
 ```
 
-### Step 3: Create a copy of `.env.example`, named `.env`, and set it up
+### Step 2: Model Configuration
 
-| Setting | Instructions |
-| ------- | ------------ |
-| DISCORD_BOT_TOKEN | Generate a new Discord application at [discord.com/developers/applications](https://discord.com/developers/applications), obtain a token from the Bot tab, and enable MESSAGE CONTENT INTENT. |
-| LLM | For [Jan](https://jan.ai/), set to `local/openai/(MODEL_NAME)`, where `(MODEL_NAME)` is your loaded model's name. |
-| CUSTOM_SYSTEM_PROMPT | Adjust the bot's behavior as needed. |
-| CUSTOM_DISCORD_STATUS | Set a custom message for the bot's Discord profile. (Max 128 characters) | 
-| ALLOWED_CHANNEL_IDS | Enter Discord channel IDs where the bot can send messages, separated by commas. Leave blank to allow all channels. |
-| ALLOWED_ROLE_IDS | Enter Discord role IDs allowed to use the bot, separated by commas. Leave blank to allow everyone. Including at least one role also disables DMs. |
-| MAX_IMAGES | Max number of image attachments allowed per message when using a vision model. (Default: `5`) |
-| MAX_MESSAGES | Max messages allowed in a reply chain. (Default: `20`) |
-| LOCAL_SERVER_URL | URL of your local API server for LLMs starting with `local/`. (Default: `http://localhost:5000/v1`) |
-| LOCAL_API_KEY | API key for your local API server with LLMs starting with `local/`. Usually safe to leave blank. |
+1. Go to the `~/jan/models` directory. 
+2. Make a new folder called `(your-deployment-name)`, like `gpt-35-hieu-jan`.
+3. Create a `model.json` file inside the folder with the specified configurations:
+  - Match the `id` property with both the folder name and your deployment name.
+  - Set the `format` property as `api`.
+  - Choose `openai` for the `engine` property.
+  - Set the `state` property as `ready`.
 
-### Step 4: Invite the bot to your Discord server using this URL (replace `CLIENT_ID` with your Discord application's client ID from the OAuth2 tab)
-
+```json title="~/jan/models/gpt-35-hieu-jan/model.json"
+{
+  "sources": [
+    {
+      "filename": "azure_openai",
+      "url": "https://hieujan.openai.azure.com"
+    }
+  ],
+  "id": "gpt-35-hieu-jan",
+  "object": "model",
+  "name": "Azure OpenAI GPT 3.5",
+  "version": "1.0",
+  "description": "Azure Open AI GPT 3.5 model is extremely good",
+  "format": "api",
+  "settings": {},
+  "parameters": {},
+  "metadata": {
+    "author": "OpenAI",
+    "tags": ["General", "Big Context Length"]
+  },
+  "engine": "openai"
+}
 ```
-https://discord.com/api/oauth2/authorize?client_id=(CLIENT_ID)&permissions=412317273088&scope=bot
+
+#### Regarding `model.json`
+
+- In `settings`, two crucial values are:
+  - `ctx_len`: Defined based on the model's context size.
+  - `prompt_template`: Defined based on the model's trained template (e.g., ChatML, Alpaca).
+  - To set up the `prompt_template`:
+    1. Visit Hugging Face.
+    2. Locate the model (e.g., [Gemma 7b it](https://huggingface.co/google/gemma-7b-it)).
+    3. Review the text and identify the template.
+- In `parameters`, consider the following options. The fields in `parameters` are typically general and can be the same across models. An example is provided below:
+
+```json
+"parameters":{
+  "temperature": 0.7,
+  "top_p": 0.95,
+  "stream": true,
+  "max_tokens": 4096,
+  "frequency_penalty": 0,
+  "presence_penalty": 0
+}
 ```
 
-### STep 5: Run the bot
+### Step 3: Start the Model
 
-Run the bot by using the following command in your command prompt:
-
-```sh
-python llmcord.py
-```
+Restart Jan and go to the Hub. Find your model and click on the Use button.
