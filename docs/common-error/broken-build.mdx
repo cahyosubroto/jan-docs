@@ -1,11 +1,14 @@
 ---
 sidebar_position: 1
+hide_table_of_contents: true
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Broken Build
+
+This issue mainly caused by Jan's unstable build after installation.
 
 The following steps will help you troubleshoot and resolve issues related to broken builds.
 
@@ -76,13 +79,43 @@ The following steps will help you troubleshoot and resolve issues related to bro
     </TabItem>
 
     <TabItem value="linux" label="Linux">
+    
         ### 1. Uninstall Jan
 
-        To uninstall Jan on Linux, use your package manager's uninstall or remove option. If you installed Jan via the `.deb` package on Debian/Ubuntu-based distributions, run the following command:
+        <Tabs groupId = "linux_type">
+            <TabItem value="linux_main" label = "Linux">
 
-        ```sh
-        sudo apt-get remove jan
-        ```
+                To uninstall Jan, you should use your package manager's uninstall or remove option. 
+
+                This will return your system to its state before the installation of Jan.
+
+                This method can also reset all settings if you are experiencing any issues with Jan.
+        
+            </TabItem>
+            <TabItem value = "deb_ub" label = "Debian / Ubuntu">
+            
+                To uninstall Jan, run the following command.MDXContent
+
+                ```sh
+                sudo apt-get remove jan
+                # where jan is the name of Jan package
+                ```
+
+                This will return your system to its state before the installation of Jan.
+
+                This method can also be used to reset all settings if you are experiencing any issues with Jan.
+
+            </TabItem>
+            <TabItem value = "other" label = "Others">
+            
+                To uninstall Jan, you can uninstall Jan by deleting the `.AppImage` file.
+
+                If you wish to completely remove all user data associated with Jan after uninstallation, you can delete the user data at `~/jan`.
+
+                This method can also reset all settings if you are experiencing any issues with Jan.
+                
+            </TabItem>
+        </Tabs>
 
         ### 2. Delete Application Data, Cache, and User Data
 

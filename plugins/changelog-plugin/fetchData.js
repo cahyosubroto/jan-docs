@@ -7,7 +7,7 @@ async function fetchData(siteConfig) {
   const repo = siteConfig.customFields.projectName;
   const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases`;
 
-  const outputDirectory = path.join(__dirname, '../../docs/changelogs-v2');
+  const outputDirectory = path.join(__dirname, '../../docs/changelogs');
 
   if (!fs.existsSync(outputDirectory)) {
     fs.mkdirSync(outputDirectory);
@@ -100,7 +100,7 @@ async function fetchData(siteConfig) {
 
   // Create _category_.json file
   const categoryContent = {
-    label: 'Changelog-v2',
+    label: 'Changelog',
     position: 5,
     link: {
       type: 'generated-index',
