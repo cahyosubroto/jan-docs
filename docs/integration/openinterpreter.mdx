@@ -1,0 +1,54 @@
+---
+sidebar_position: 6
+---
+
+# Jan Integration with OpenInterpreter
+
+## Overview
+
+This tutorial illustrates how to integrate with OpenInterpreter using Jan.
+
+## Integration Steps
+
+### Step 1: Install OpenInterpreter
+
+Install OpenInterpreter by running:
+
+```sh
+pip install open-interpreter
+```
+
+:::warning
+A Rust compiler is required to install OpenInterpreter. If not already installed, run:
+
+```zsh
+sudo apt install rustc
+```
+
+or if you're running on windows, go to [this page](https://rustup.rs/)
+
+:::
+
+### Step 2: Configure Jan's Local API Server
+
+Before using OpenInterpreter, configure the model in `Settings` > `My Model` for Jan and activate its local API server.
+
+#### Enabling Jan API Server
+
+1. Click the `<>` button to access the **Local API Server** section in Jan.
+
+2. Configure the server settings, including **IP Port**, **Cross-Origin-Resource-Sharing (CORS)**, and **Verbose Server Logs**.
+
+3. Click **Start Server**.
+
+### Step 3: Run OpenInterpreter with Specific Parameters
+
+For integration, provide the API Base (`http://localhost:1337/v1`) and the model ID (e.g., `mistral-ins-7b-q4`) when running OpenInterpreter.
+
+For instance, if using **Mistral Instruct 7B Q4** as the model, execute:
+
+```zsh
+interpreter --api_base http://localhost:1337/v1 --model mistral-ins-7b-q4
+```
+
+OpenInterpreter is now ready for use!
