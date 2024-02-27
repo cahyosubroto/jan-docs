@@ -1,0 +1,84 @@
+---
+sidebar_position: 8
+---
+
+# Jan Integration with LM Studio
+
+## Overview
+
+This tutorial illustrates how to integrate with LM STudio using Jan.
+
+[LM Studio](https://lmstudio.ai/) enables you to explore, download, and run local Large Language Models (LLMs). This guide demonstrates two methods to integrate and utilize your existing LM Studio models with Jan. The first method involves integrating the LM Studio server with Jan UI, while the second method involves migrating your downloaded model from LM Studio to Jan. We'll illustrate using the [Phi 2 - GGUF](https://huggingface.co/TheBloke/phi-2-GGUF) model from Hugging Face as an example.
+
+## Integrating LM Studio with Jan
+
+### Step 1: Start the LM Studio Server
+
+1. Go to the Local Inference Server within the LM Studio app.
+2. Choose the desired model.
+3. Initiate the server after adjusting the server port and options as needed.
+
+Update the `openai.json` file in the `~/jan/engines` folder to include the complete URL of the LM Studio server.
+
+```json title="~/jan/engines/openai.json"
+{
+  "full_url": "http://localhost:<port>/v1/chat/completions"
+}
+```
+
+:::note
+
+Replace `(port)` with the port number you set in the LM Studio server. The default port is 1234.
+
+:::
+
+### Step 2: Modify a Model JSON
+
+1. Go to the `~/jan/models` directory.
+2. Make a folder named `lmstudio-(modelname)` (i.e., `lmstudio-phi-2`). 
+3. Create a `model.json` file with these settings:
+  - Set `format` to `api`.
+  - Set `engine` to `openai`.
+  - Set `state` to `ready`.
+  
+```json title="~/jan/models/mistral-tiny/model.json"
+{
+  "sources": [
+    {
+      "filename": "phi-2-GGUF",
+      "url": "https://huggingface.co/TheBloke/phi-2-GGUF"
+    }
+  ],
+  "id": "lmstudio-phi-2",
+  "object": "model",
+  "name": "LM Studio - Phi 2 - GGUF",
+  "version": "1.0",
+  "description": "TheBloke/phi-2-GGUF",
+  "format": "api",
+  "settings": {},
+  "parameters": {},
+  "metadata": {
+    "author": "Microsoft",
+    "tags": ["General", "Big Context Length"]
+  },
+  "engine": "openai"
+}
+```
+
+### Step 3: Start the Model
+
+Restart Jan and go to the Hub. Find your model and select the Use button.
+
+## Migrating Your Downloaded Model from LM Studio to Jan (version 0.4.6 and older)
+
+### Step 1: Migrate Your Downloaded Model
+
+### Step 2: Migrate Your Downloaded Model
+
+## Directing to the Downloaded Model of LM Studio from Jan (version 0.4.7+)
+
+### Step 1: Reveal the Model Absolute Path
+
+### Step 2: Modify a Model JSON
+
+### Step 3: Start the Model
