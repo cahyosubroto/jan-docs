@@ -34,16 +34,16 @@ pip install -r requirements.txt
 
 | Setting | Instructions |
 | ------- | ------------ |
-| DISCORD_BOT_TOKEN | Generate a new Discord application at [discord.com/developers/applications](https://discord.com/developers/applications), obtain a token from the Bot tab, and enable MESSAGE CONTENT INTENT. |
-| LLM | For [Jan](https://jan.ai/), set to `local/openai/(MODEL_NAME)`, where `(MODEL_NAME)` is your loaded model's name. |
-| CUSTOM_SYSTEM_PROMPT | Adjust the bot's behavior as needed. |
-| CUSTOM_DISCORD_STATUS | Set a custom message for the bot's Discord profile. (Max 128 characters) | 
-| ALLOWED_CHANNEL_IDS | Enter Discord channel IDs where the bot can send messages, separated by commas. Leave blank to allow all channels. |
-| ALLOWED_ROLE_IDS | Enter Discord role IDs allowed to use the bot, separated by commas. Leave blank to allow everyone. Including at least one role also disables DMs. |
-| MAX_IMAGES | Max number of image attachments allowed per message when using a vision model. (Default: `5`) |
-| MAX_MESSAGES | Max messages allowed in a reply chain. (Default: `20`) |
-| LOCAL_SERVER_URL | URL of your local API server for LLMs starting with `local/`. (Default: `http://localhost:5000/v1`) |
-| LOCAL_API_KEY | API key for your local API server with LLMs starting with `local/`. Usually safe to leave blank. |
+| `DISCORD_BOT_TOKEN` | Generate a new Discord application at [discord.com/developers/applications](https://discord.com/developers/applications), obtain a token from the Bot tab, and enable MESSAGE CONTENT INTENT. |
+| `LLM` | For [Jan](https://jan.ai/), set to `local/openai/(MODEL_NAME)`, where `(MODEL_NAME)` is your loaded model's name. |
+| `CUSTOM_SYSTEM_PROMPT` | Adjust the bot's behavior as needed. |
+| `CUSTOM_DISCORD_STATUS` | Set a custom message for the bot's Discord profile. (Max 128 characters) | 
+| `ALLOWED_CHANNEL_IDS` | Enter Discord channel IDs where the bot can send messages, separated by commas. Leave blank to allow all channels. |
+| `ALLOWED_ROLE_IDS` | Enter Discord role IDs allowed to use the bot, separated by commas. Leave blank to allow everyone. Including at least one role also disables DMs. |
+| `MAX_IMAGES` | Max number of image attachments allowed per message when using a vision model. (Default: `5`) |
+| `MAX_MESSAGES` | Max messages allowed in a reply chain. (Default: `20`) |
+| `LOCAL_SERVER_URL` | URL of your local API server for LLMs starting with `local/`. (Default: `http://localhost:5000/v1`) |
+| `LOCAL_API_KEY` | API key for your local API server with LLMs starting with `local/`. Usually safe to leave blank. |
 
 ### Step 4: Invite the bot to your Discord server using this URL (replace `CLIENT_ID` with your Discord application's client ID from the OAuth2 tab)
 
