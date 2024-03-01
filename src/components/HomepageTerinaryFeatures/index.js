@@ -12,35 +12,34 @@ export default function HomepageTerinaryFeatures() {
                             <h3>Get Started</h3>
                         </div>
                         <div className={styles.cardContent}>
-                            <p>Lorem ipsum dolor sit amet, consec tetur adipiscing.</p>
+                            <p>Dive into the Jan basics and get set up quickly.</p>
                             <ul>
-                                <li>Overview</li>
                                 <li>Quickstart</li>
                                 <li>Installation</li>
+                                <li>Pre-configured Models</li>
                             </ul>
                         </div>
                     </div>
                     <div className={clsx(styles.card)}>
                         <div className={styles.cardHeader}>
                             <img alt={"Icon"} src={"/img/buku.png"}/>
-                            <h3>Guides</h3>
+                            <h3>Best Practices:</h3>
                         </div>
                         <div className={styles.cardContent}>
-                            <p>Lorem ipsum dolor sit amet, consec tetur adipiscing.</p>
+                            <p>Learn the best practices for optimizing thread management and local server use.</p>
                             <ul>
-                                <li>Best Practices</li>
-                                <li>Chat Management</li>
-                                <li>Security</li>
+                                <li>Thread Management</li>
+                                <li>Local Server</li>
                             </ul>
                         </div>
                     </div>
                     <div className={clsx(styles.card)}>
                         <div className={styles.cardHeader}>
                             <img alt={"Icon"} src={"/img/setting.png"}/>
-                            <h3>Get Started</h3>
+                            <h3>Features:</h3>
                         </div>
                         <div className={styles.cardContent}>
-                            <p>Lorem ipsum dolor sit amet, consec tetur adipiscing.</p>
+                            <p>Explore our key features designed to enhance your experience.</p>
                             <ul>
                                 <li>Advanced Models Setup</li>
                                 <li>Extensions</li>
@@ -51,10 +50,10 @@ export default function HomepageTerinaryFeatures() {
                     <div className={clsx(styles.card)}>
                         <div className={styles.cardHeader}>
                             <img alt={"Icon"} src={"/img/doa.png"}/>
-                            <h3>Get Started</h3>
+                            <h3>Troubleshooting:</h3>
                         </div>
                         <div className={styles.cardContent}>
-                            <p>Lorem ipsum dolor sit amet, consec tetur adipiscing.</p>
+                            <p>Find solutions to common issues, including error codes, frequent errors, and FAQs.</p>
                             <ul>
                                 <li>Error Codes</li>
                                 <li>Common Errors</li>

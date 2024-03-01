@@ -12,8 +12,8 @@ export default function HomepageSecondaryFeatures() {
                                 <img alt={"Feature logo"} src={"/img/bg-rocket.png"}/>
                             </div>
                             <div className={styles.cardContent}>
-                                <h3>Praesent vel Felis Vehicula</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue tempus ligula. Aenean finibus lectus massa, non laoreet est bibendum in.</p>
+                                <h3>Quickstart:</h3>
+                                <p>Jump right in with our Quickstart guide, designed to get you going with simple steps and clear instructions for a smooth setup.</p>
                             </div>
                         </div>
                         <div className={styles.cardFooter}>
@@ -30,8 +30,8 @@ export default function HomepageSecondaryFeatures() {
                                 <img alt={"Feature logo"} src={"/img/bg-wrench.png"}/>
                             </div>
                             <div className={styles.cardContent}>
-                                <h3>Praesent vel Felis Vehicula</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue tempus ligula. Aenean finibus lectus massa, non laoreet est bibendum in.</p>
+                                <h3>Integrations:</h3>
+                                <p>Discover how Jan seamlessly integrates with 9 different system, streamlining your application for maximum efficiency.</p>
                             </div>
                         </div>
                         <div className={styles.cardFooter}>
@@ -48,8 +48,8 @@ export default function HomepageSecondaryFeatures() {
                                 <img alt={"Feature logo"} src={"/img/bg-book.png"}/>
                             </div>
                             <div className={styles.cardContent}>
-                                <h3>Praesent vel Felis Vehicula</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue tempus ligula. Aenean finibus lectus massa, non laoreet est bibendum in.</p>
+                                <h3>Error Codes:</h3>
+                                <p>Navigate through common error codes with explanations and solutions to resolve them quickly.</p>
                             </div>
                         </div>
                         <div className={styles.cardFooter}>
