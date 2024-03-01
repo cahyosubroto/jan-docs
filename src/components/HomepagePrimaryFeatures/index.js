@@ -8,8 +8,8 @@ export default function HomepagePrimaryFeatures() {
                 <div className={clsx(styles.cards)}>
                     <div className={clsx(styles.card, styles.cardBluish)}>
                         <div>
-                            <p>Installation:</p>
-                            <h3>Set up Jan with our guide, ensuring a smooth installation process across multiple platforms.</h3>
+                            <p>Installation</p>
+                            <h3>Set up Jan with our guide to install across multiple platform.</h3>
                         </div>
                         <div >
                             <a href={"#"}>Get Started</a>
@@ -21,7 +21,7 @@ export default function HomepagePrimaryFeatures() {
                     <div className={clsx(styles.card, styles.cardPinkish)}>
                         <div>
                             <p>Models</p>
-                            <h3>Explore the available AI models, each pre-configured for immediate use to streamline your projects.</h3>
+                            <h3>Explore the available pre-configured AI models. </h3>
                         </div>
                         <div >
                             <a href={"#"}>Support</a>

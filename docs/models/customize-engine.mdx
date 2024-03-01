@@ -1,19 +1,27 @@
 ---
+title: Customize Engine Settings
 sidebar_position: 1
+description: A step-by-step guide to change your engine's settings.
+keywords:
+  [
+    Jan AI,
+    Jan,
+    ChatGPT alternative,
+    local AI,
+    private AI,
+    conversational AI,
+    no-subscription fee,
+    large language model,
+    import-models-manually,
+    customize-engine-settings,
+  ]
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Customize Engine Settings
 
-:::warning
-
-This is currently under development.
-
-:::
-
-In this guide, we'll walk you through the process of customizing your engine settings by tweaking the `nitro.json` file
+In this guide, we'll walk you through the process of customizing your engine settings by configuring the `nitro.json` file
 
 1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/jan/engine` folder.
 
@@ -51,11 +59,11 @@ The table below describes the parameters in the `nitro.json` file.
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-| `ctx_len` | **Integer** | The context length for the model operations. |
-| `ngl` | **Integer** | The number of GPU layers to use. |
-| `cpu_threads` | **Integer** | The number of threads to use for inferencing (CPU mode only) |
-| `cont_batching` | **Boolean** | Whether to use continuous batching. |
-| `embedding` | **Boolean** | Whether to use embedding in the model. |
+| `ctx_len` | **Integer** | Typically set at `2048`, `ctx_len` provides ample context for model operations like `GPT-3.5`. (*Maximum*: `4096`, *Minimum*: `1`) |
+| `ngl` | **Integer** | Defaulted at `100`, `ngl` determines GPU layer usage. |
+| `cpu_threads` | **Integer** | Determines CPU inference threads, limited by hardware and OS. (*Maximum* determined by system) |
+| `cont_batching` | **Integer** | Controls continuous batching, enhancing throughput for LLM inference. |
+| `embedding` | **Integer** | Enables embedding utilization for tasks like document-enhanced chat in RAG-based applications. |
 
 :::tip
  - By default, the value of `ngl` is set to 100, which indicates that it will offload all. If you wish to offload only 50% of the GPU, you can set `ngl` to 15 because most models on Mistral or Llama are around ~ 30 layers.

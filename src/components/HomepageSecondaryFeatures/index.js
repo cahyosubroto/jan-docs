@@ -12,7 +12,7 @@ export default function HomepageSecondaryFeatures() {
                                 <img alt={"Feature logo"} src={"/img/bg-rocket.png"}/>
                             </div>
                             <div className={styles.cardContent}>
-                                <h3>Quickstart:</h3>
+                                <h3>Quickstart</h3>
                                 <p>Jump right in with our Quickstart guide, designed to get you going with simple steps and clear instructions for a smooth setup.</p>
                             </div>
                         </div>
@@ -30,7 +30,7 @@ export default function HomepageSecondaryFeatures() {
                                 <img alt={"Feature logo"} src={"/img/bg-wrench.png"}/>
                             </div>
                             <div className={styles.cardContent}>
-                                <h3>Integrations:</h3>
+                                <h3>Integrations</h3>
                                 <p>Discover how Jan seamlessly integrates with 9 different system, streamlining your application for maximum efficiency.</p>
                             </div>
                         </div>
@@ -48,7 +48,7 @@ export default function HomepageSecondaryFeatures() {
                                 <img alt={"Feature logo"} src={"/img/bg-book.png"}/>
                             </div>
                             <div className={styles.cardContent}>
-                                <h3>Error Codes:</h3>
+                                <h3>Error Codes</h3>
                                 <p>Navigate through common error codes with explanations and solutions to resolve them quickly.</p>
                             </div>
                         </div>
